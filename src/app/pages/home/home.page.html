@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-label>
+        CRUD
+        <p>{{today | date:'fullDate'}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+
+  <!-- Card Load Api -->
+  <ion-card *ngFor="let post of allData">
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{post.id}}
+      </ion-card-subtitle>
+      <ion-card-title>
+        {{post.title}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{post.completed}}
+    </ion-card-content>
+
+    <!-- Update/Delete -->
+    <ion-row class="txtCenter">
+      <ion-col size="6">
+        <ion-item>
+          <ion-icon name="pencil-outline"></ion-icon>
+          <p>Actualizar</p>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-icon name="trash-outline"></ion-icon>
+          Eliminar
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <!-- Add Element -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addTask()">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
+
+
+<!-- Footer -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>CRUD - TEST</ion-title>
+  </ion-toolbar>
+</ion-footer>

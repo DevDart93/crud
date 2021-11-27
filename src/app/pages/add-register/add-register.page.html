@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add New Register</ion-title>
+    <ion-icon name="close" slot="end" size="large" class="ion-padding" (click)="dismiss()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <!-- Title -->
+    <ion-item>
+      <ion-textarea placeholder="Title"></ion-textarea>
+    </ion-item>
+    <!-- Completed -->
+    <ion-item>
+      <ion-label>Completed</ion-label>
+      <ion-select>
+        <ion-select-option value="true">True</ion-select-option>
+        <ion-select-option value="false">False</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <!-- Add New Register -->
+    <ion-button class="ion-margin" expand="block">Add</ion-button>
+  </ion-card>
+
+</ion-content>

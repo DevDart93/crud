@@ -1,0 +1,29 @@
+<ion-content class="ion-padding">
+  <form [formGroup]="loginForm">
+    <!-- Campo Correo -->
+    <ion-item>
+      <ion-input formControlName="email" type="text" placeholder="Correo"></ion-input>
+    </ion-item>
+    <div class="error-messages">
+      <ng-container *ngFor="let error of error_messages.email">
+        <div class="error-messsage" *ngIf="loginForm.get('email').hasError(error.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+          {{ error.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- Campo Contraseña -->
+    <ion-item>
+      <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+    <div class="error-messages">
+      <ng-container *ngFor="let error of error_messages.password">
+        <div class="error-messsage" *ngIf="loginForm.get('password').hasError(error.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+          {{ error.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-button (click)="redirectToHome()" [disabled]="!loginForm.valid" shape="round" size="default" color="primary" expand="block">Acceder</ion-button>
+  </form>
+</ion-content>
